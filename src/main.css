@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --color-primary-50: color-mix(in srgb, var(--color-primary), white 90%);
+  --color-primary-100: color-mix(in srgb, var(--color-primary), white 80%);
+  --color-primary-500: var(--color-primary);
+  --color-primary-600: color-mix(in srgb, var(--color-primary), black 20%);
+  --color-primary-800: color-mix(in srgb, var(--color-primary), black 60%);
+  --color-primary-900: color-mix(in srgb, var(--color-primary), black 80%);
+}
