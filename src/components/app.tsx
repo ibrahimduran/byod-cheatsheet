@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FC } from "react";
+import { useCallback, useEffect, useMemo, useState, type FC } from "react";
 
 import type { CheatsheetSchema } from "../schema";
 import { createFilterCatalog } from "../utils/filter-catalog";
@@ -10,6 +10,7 @@ import { ErrorAlert } from "./error-alert";
 import { Filter } from "./filter";
 import { Header } from "./header";
 import { Search } from "./search";
+import { SettingsModal } from "./settings-modal";
 
 export interface AppProps {
   data: CheatsheetSchema;
@@ -22,6 +23,7 @@ export const App: FC<AppProps> = ({ data, error }) => {
   >({});
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const filterCatalog = useMemo(
     () => createFilterCatalog(data.blocks),
@@ -66,6 +68,11 @@ export const App: FC<AppProps> = ({ data, error }) => {
     setSelectedTags([]);
   };
 
+  const setData = useCallback((newData: CheatsheetSchema) => {
+    document.location.hash = `#${btoa(JSON.stringify(newData))}`;
+    window.location.reload();
+  }, []);
+
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--color-primary",
@@ -80,6 +87,11 @@ export const App: FC<AppProps> = ({ data, error }) => {
         description={data.description}
         icon={data.icon ?? undefined}
         color="var(--color-primary)"
+        onSettingsClick={
+          window.cheatsheetHashEnabled === true
+            ? () => setSettingsOpen(true)
+            : undefined
+        }
       />
 
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex flex-col gap-y-8">
@@ -118,6 +130,13 @@ export const App: FC<AppProps> = ({ data, error }) => {
           </BlockGrid>
         )}
       </main>
+
+      <SettingsModal
+        open={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
+        data={data}
+        onApply={setData}
+      />
     </div>
   );
 };
