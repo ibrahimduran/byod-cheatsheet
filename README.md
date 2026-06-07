@@ -22,7 +22,7 @@ Requirements:
 1) Import this script in the page and have an <div id="root"> on the page:
    https://ibrahimduran.github.io/byod-cheatsheet/byod-cheatsheet.js
 2) Define window.cheatsheet before the script runs.
-3) Follow this schema exactly:
+3) Follow the JSON schema at https://ibrahimduran.github.io/byod-cheatsheet/schema.json or the summary below:
    - title: string
    - description: string
    - theme: { primary: string (hex color) }

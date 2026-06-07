@@ -1045,7 +1045,6 @@ __metadata:
     vite: "npm:^8.0.12"
     vite-plugin-css-injected-by-js: "npm:^5.0.1"
     zod: "npm:^4.4.3"
-    zod-openapi: "npm:^5.4.6"
   languageName: unknown
   linkType: soft
 
@@ -2330,15 +2329,6 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
-  languageName: node
-  linkType: hard
-
-"zod-openapi@npm:^5.4.6":
-  version: 5.4.6
-  resolution: "zod-openapi@npm:5.4.6"
-  peerDependencies:
-    zod: ^3.25.74 || ^4.0.0
-  checksum: 10c0/87fb2c55c11d2a285d4a9edc1f9b9f7a6b741092786065575468f384ef180bb80b03694c1b8f5364ddf698ba603ff0543ef7c5395962cf3289893b1ebf7f1497
   languageName: node
   linkType: hard
 
