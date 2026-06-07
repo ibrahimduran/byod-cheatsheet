@@ -44,6 +44,7 @@ export const BlockSchema = z.object({
 
 export type CheatsheetSchema = z.infer<typeof CheatsheetSchema>;
 export const CheatsheetSchema = z.object({
+  $schema: z.string().optional(),
   title: z.string().default("Untitled Cheatsheet"),
   description: z.string().default(""),
   theme: z
