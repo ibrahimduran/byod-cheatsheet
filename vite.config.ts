@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -10,10 +8,11 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    lib: {
-      entry: resolve(__dirname, "src/main.tsx"),
-      formats: ["es"],
-      name: "byod-cheatsheet",
+    rollupOptions: {
+      output: {
+        entryFileNames: "byod-cheatsheet.js",
+        inlineDynamicImports: true,
+      },
     },
   },
 });
