@@ -5,6 +5,7 @@ import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), cssInjectedByJsPlugin()],
+  base: "https://ibrahimduran.github.io/byod-cheatsheet/",
   build: {
     outDir: "dist",
     emptyOutDir: true,

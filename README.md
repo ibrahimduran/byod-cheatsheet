@@ -20,7 +20,7 @@ Create a complete HTML page that renders a cheatsheet using BYOD Cheatsheet.
 
 Requirements:
 1) Import this script in the page and have an <div id="root"> on the page:
-   https://ibrahimduran.github.io/byod-cheatsheet/dist/app.js
+   https://ibrahimduran.github.io/byod-cheatsheet/byod-cheatsheet.js
 2) Define window.cheatsheet before the script runs.
 3) Follow this schema exactly:
    - title: string
@@ -47,12 +47,12 @@ Requirements:
 
 Use the hosted app URL:
 
-- https://ibrahimduran.github.io/byod-cheatsheet
+- https://ibrahimduran.github.io/byod-cheatsheet/
 
 Pass base64-encoded JSON data in the URL hash:
 
 ```text
-https://ibrahimduran.github.io/byod-cheatsheet#<url-encoded-base64-json>
+https://ibrahimduran.github.io/byod-cheatsheet/#<url-encoded-base64-json>
 ```
 
 The app will parse the hash, validate the payload, and render it.
